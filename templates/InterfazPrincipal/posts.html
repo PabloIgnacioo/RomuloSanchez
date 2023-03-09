@@ -1,0 +1,16 @@
+{% extends 'interfaz_layout.html' %}
+{% load static %}
+{% block css %}
+    <link rel="stylesheet" href="{% static 'interfaz_principal/css/nosotrosestilo.css' %}">
+    <link rel="stylesheet" href="{% static 'interfaz_principal/css/estilos3.css' %}">
+{% endblock %}
+{% block content %}
+    <div class="content">
+        {% if posts.imagen %}
+            <h1>{{ posts.nombre }}</h1>
+            <h1>{{ posts.fecha }}</h1>
+            <img class="post-pic" src="{{ posts.imagen.url }}" width="400px" height="400px">
+            <p>{{ posts.descripcion }}</p>
+        {% endif %}
+    </div>
+{% endblock %}
